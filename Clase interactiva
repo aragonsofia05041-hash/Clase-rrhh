@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Recursos Humanos - Sector Hotelero y Gastronómico</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #d69e2e;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --light-text: #718096;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #cbd5e0;
+            font-size: 1.1rem;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.2rem 0 0.5rem 0;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        table, th, td {
+            border: 1px solid #cbd5e0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Quiz Styles */
+        .quiz-option {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .quiz-option:hover {
+            background-color: #edf2f7;
+        }
+
+        .quiz-option input {
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #b7791f;
+        }
+
+        #result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Gestión de Recursos Humanos</h1>
+        <p>Enfoque Legal y Operativo en la Industria Hotelera y Gastronómica de Guatemala</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#planificacion">Planificación</a></li>
+            <li><a href="#analisis">Análisis de Puestos</a></li>
+            <li><a href="#reclutamiento">Reclutamiento</a></li>
+            <li><a href="#contratacion">Contratación & Leyes</a></li>
+            <li><a href="#prueba">Período de Prueba & Inducción</a></li>
+            <li><a href="#quiz">Comprobación</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <section id="planificacion">
+            <h2>1. Planificación y Previsión de Necesidades [cite: 149]</h2>
+            <p>La planificación de personal es el proceso estratégico para determinar los recursos humanos requeridos en la consecución de objetivos organizacionales[cite: 149, 202]. En Guatemala, la industria de hospitalidad requiere una planificación dinámica debido a la variabilidad estacional (alta demanda en Semana Santa, fin de año y eventos)[cite: 3, 150].</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Métodos de Previsión [cite: 151]</h3>
+                    <ul>
+                        <li><strong>Basado en la demanda del servicio:</strong> Estimación según % de ocupación hotelera o cubiertos proyectados para calcular camareras, stewards o meseros[cite: 151, 205].</li>
+                        <li><strong>Modelos de sustitución de puestos:</strong> Cuadros de reemplazo estratégico para posiciones críticas (Ej. Chef Ejecutivo, Ama de Llaves)[cite: 152, 206].</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Análisis del Mercado Laboral [cite: 153]</h3>
+                    <ul>
+                        <li><strong>Oferta > Demanda:</strong> Elevada competencia por vacantes operativas (recepcionistas, auxiliares de limpieza)[cite: 154, 210].</li>
+                        <li><strong>Demanda > Oferta:</strong> Escasez de perfiles especializados (ej. Gerentes de A&B bilingües, Chefs internacionales)[cite: 155, 213].</li>
+                        <li><strong>Factores Locales:</strong> Salarios mínimos decretados según la actividad y tasas de rotación altas[cite: 156, 215].</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="analisis">
+            <h2>2. Análisis de Puestos y Modelo por Competencias [cite: 157, 176]</h2>
+            <p>Es el pilar de la gestión de RRHH. Comprende dos componentes fundamentales[cite: 157, 218]:</p>
+            <ul>
+                <li><strong>Descripción de Puesto:</strong> Detalla qué hace el ocupante, cómo lo hace, cuándo y por qué lo hace[cite: 158, 219].</li>
+                <li><strong>Perfil de Puesto (Especificación):</strong> Define requerimientos académicos, experiencia, esfuerzo físico, responsabilidades y condiciones de trabajo[cite: 159, 220].</li>
+            </ul>
+
+            <h3>Modelo por Competencias (S-H-A) [cite: 176, 243]</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Saber (Conocimiento) [cite: 176, 249]</h3>
+                    <p>Fundamentos teóricos, idiomas y técnicas[cite: 176, 249].</p>
+                </div>
+                <div class="card">
+                    <h3>Saber Hacer (Habilidad) [cite: 176, 250]</h3>
+                    <p>Manejo de sistemas PMS/POS, destreza culinaria, ejecución de tareas[cite: 176, 250].</p>
+                </div>
+                <div class="card">
+                    <h3>Saber Ser / Estar (Actitud) [cite: 176, 251]</h3>
+                    <p>Orientación al servicio, empatía, tolerancia a la presión, trabajo en equipo[cite: 35, 176, 251].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reclutamiento">
+            <h2>3. Fuentes y Canales de Reclutamiento [cite: 2, 56, 180]</h2>
+            <p>El reclutamiento abarca el proceso de atracción de talentos calificados hacia la empresa[cite: 2, 58, 176].</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Reclutamiento Interno [cite: 4, 60, 178]</h3>
+                    <p>Promociones verticales o transferencias horizontales[cite: 4, 61, 178].</p>
+                    <p><strong>Ventajas:</strong> Reduce costos de adaptación y genera motivación[cite: 5, 62, 178].</p>
+                </div>
+                <div class="card">
+                    <h3>Reclutamiento Externo en Guatemala [cite: 6, 180, 181]</h3>
+                    <ul>
+                        <li><strong>Ferias del Empleo / Presencial:</strong> CAMTUR, Gremial de Hoteles, MINTRAB, INTECAP[cite: 6, 41].</li>
+                        <li><strong>Plataformas Digitales:</strong> LinkedIn (cargos gerenciales y ejecutivos)[cite: 7].</li>
+                        <li><strong>Canales Masivos:</strong> CompuTrabajo y Tecoloco (mandos medios y operativos)[cite: 8].</li>
+                        <li><strong>Redes Sociales:</strong> Redes para contratación rápida de personal de línea (Meseros, Camareras)[cite: 9].</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contratacion">
+            <h2>4. Contratación y Marco Legal Laboral (Guatemala) [cite: 10, 183]</h2>
+            <p>El contrato individual de trabajo es el vínculo económico-jurídico entre el patrono y el trabajador (Art. 18 Código de Trabajo)[cite: 11, 186]. Está protegido por la Constitución Política de la República de Guatemala (CPRG):</p>
+            <ul>
+                <li><strong>Principio Tutelar (Art. 103 CPRG):</strong> Las leyes deben otorgar una protección jurídica superior al trabajador para equiparar la relación laboral[cite: 12].</li>
+                <li><strong>Irrenunciabilidad de Derechos (Art. 106 CPRG y Art. 12 C.T.):</strong> Es nulo <em>ipso jure</em> cualquier acuerdo que implique renuncia o reducción de derechos mínimos[cite: 13].</li>
+            </ul>
+
+            <h3>Modelos de Contrato de Trabajo (Art. 25 C.T.) [cite: 14, 37]</h3>
+            <ul>
+                <li><strong>Tiempo Indefinido:</strong> La regla general para personal permanente[cite: 14, 15].</li>
+                <li><strong>Plazo Fijo:</strong> Cuándo se fija una fecha de terminación o para cubrir temporadas de alta ocupación[cite: 17].</li>
+                <li><strong>Obra Determinada:</strong> Ajustado a la finalización de una tarea u obra específica[cite: 16].</li>
+                <li><strong>Tiempo Parcial (Acuerdo Gubernativo 89-2019):</strong> Permite contratación por horas con pago proporcional de salario y prestaciones[cite: 18, 40]. Ideal para banquetes y eventos[cite: 19].</li>
+            </ul>
+            <p><em>Nota:</em> Todo contrato debe constar por escrito en 3 ejemplares (Patrono, Trabajador y MINTRAB - Art. 28 C.T.)[cite: 21, 43, 190].</p>
+
+            <h3>Jornadas de Trabajo y Horas Extraordinarias [cite: 22, 25]</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jornada [cite: 25]</th>
+                        <th>Horario Habitual [cite: 25]</th>
+                        <th>Límite Diario [cite: 25]</th>
+                        <th>Límite Semanal [cite: 25]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ordinaria Diurna [cite: 25]</td>
+                        <td>06:00 a 18:00 hrs [cite: 25]</td>
+                        <td>8 horas [cite: 25]</td>
+                        <td>44 horas (se pagan 48 hrs) [cite: 25]</td>
+                    </tr>
+                    <tr>
+                        <td>Ordinaria Nocturna [cite: 25]</td>
+                        <td>18:00 a 06:00 hrs [cite: 25]</td>
+                        <td>6 horas [cite: 25]</td>
+                        <td>36 horas [cite: 25]</td>
+                    </tr>
+                    <tr>
+                        <td>Ordinaria Mixta [cite: 25]</td>
+                        <td>Abarca parte de ambos períodos [cite: 25]</td>
+                        <td>7 horas [cite: 25]</td>
+                        <td>42 horas [cite: 25]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Horas Extraordinarias (Art. 121 C.T.):</strong> Trabajo fuera de la jornada ordinaria recargado al menos un 50% más (150%)[cite: 22, 23, 46]. La jornada acumulada diaria no puede exceder las 12 horas[cite: 24].</p>
+        </section>
+
+        <section id="prueba">
+            <h2>5. Período de Prueba e Inducción [cite: 26, 29]</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Período de Prueba (Art. 81 C.T.) [cite: 26, 188]</h3>
+                    <p>Los primeros <strong>2 meses</strong> de ejecución del contrato son de prueba[cite: 26, 188]. Durante este tiempo cualquiera de las partes puede finalizar la relación laboral sin indemnización ni responsabilidad legal[cite: 27, 189].</p>
+                    <p>RRHH lo utiliza como evaluación técnica activa apoyada en rúbricas y métricas de desempeño[cite: 28].</p>
+                </div>
+                <div class="card">
+                    <h3>Proceso de Inducción [cite: 29]</h3>
+                    <ul>
+                        <li><strong>Inducción General:</strong> Cultura organizacional, misión, visión, Reglamento Interior de Trabajo y políticas de la empresa[cite: 30, 31].</li>
+                        <li><strong>Inducción Específica:</strong> Capacitación directa en el puesto, uso de POS/PMS, métricas de servicio y asignación de un mentor o "Buddy"[cite: 33, 34].</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz">
+            <h2>Comprobación de Conocimientos</h2>
+            <p>Responde a las siguientes preguntas para evaluar tu comprensión sobre los temas abordados:</p>
+
+            <form id="quizForm">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3>1. Según el Art. 81 del Código de Trabajo de Guatemala, ¿de cuánto tiempo es el período de prueba? [cite: 26, 188]</h3>
+                    <label class="quiz-option"><input type="radio" name="q1" value="a"> 15 días</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="b"> 1 mes</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="c"> 2 meses</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="d"> 6 meses</label>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3>2. ¿Cuál es el límite semanal de la Jornada Ordinaria Diurna de trabajo que computa el pago de 48 horas? [cite: 25]</h3>
+                    <label class="quiz-option"><input type="radio" name="q2" value="a"> 36 horas</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="b"> 40 horas</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="c"> 44 horas</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="d"> 48 horas</label>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3>3. ¿Con qué porcentaje mínimo recargado sobre el salario ordinario se remuneran las horas extraordinarias? [cite: 23, 46]</h3>
+                    <label class="quiz-option"><input type="radio" name="q3" value="a"> 25%</label>
+                    <label class="quiz-option"><input type="radio" name="q3" value="b"> 50% (Paga al 150%)</label>
+                    <label class="quiz-option"><input type="radio" name="q3" value="c"> 100%</label>
+                    <label class="quiz-option"><input type="radio" name="q3" value="d"> 200%</label>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3>4. ¿Qué modelo de contratación resulta idóneo para cubrir eventos especiales o turnos pico según el Ac. Gub. 89-2019? [cite: 18, 19, 40]</h3>
+                    <label class="quiz-option"><input type="radio" name="q4" value="a"> Contrato de Obra Determinada</label>
+                    <label class="quiz-option"><input type="radio" name="q4" value="b"> Contrato por Tiempo Indefinido</label>
+                    <label class="quiz-option"><input type="radio" name="q4" value="c"> Contrato a Tiempo Parcial</label>
+                    <label class="quiz-option"><input type="radio" name="q4" value="d"> Contrato de Aprendizaje</label>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3>5. ¿En cuántos ejemplares debe formalizarse por escrito un contrato de trabajo en Guatemala según el Art. 28 del C.T.? [cite: 21, 43, 190]</h3>
+                    <label class="quiz-option"><input type="radio" name="q5" value="a"> 1 ejemplar</label>
+                    <label class="quiz-option"><input type="radio" name="q5" value="b"> 2 ejemplares</label>
+                    <label class="quiz-option"><input type="radio" name="q5" value="c"> 3 ejemplares (Patrono, Trabajador, MINTRAB)</label>
+                    <label class="quiz-option"><input type="radio" name="q5" value="d"> 4 ejemplares</label>
+                </div>
+
+                <button type="button" class="btn" onclick="evaluateQuiz()">Enviar Respuestas</button>
+            </form>
+
+            <div id="result"></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Plataforma Educativa de Recursos Humanos. Creado en base a los contenidos del curso.</p>
+    </footer>
+
+    <script>
+        function evaluateQuiz() {
+            const answers = {
+                q1: 'c',
+                q2: 'c',
+                q3: 'b',
+                q4: 'c',
+                q5: 'c'
+            };
+
+            let score = 0;
+            let total = 5;
+            let form = document.forms['quizForm'];
+
+            for (let i = 1; i <= total; i++) {
+                let qValue = form['q' + i].value;
+                if (qValue === answers['q' + i]) {
+                    score++;
+                }
+            }
+
+            let resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+
+            let percentage = (score / total) * 100;
+            if (percentage >= 80) {
+                resultDiv.style.backgroundColor = '#c6f6d5';
+                resultDiv.style.color = '#22543d';
+                resultDiv.innerHTML = `¡Excelente trabajo! Obtuviste ${score} de ${total} respuestas correctas (${percentage}%). Demuestras un gran dominio de la gestión de RRHH.`;
+            } else {
+                resultDiv.style.backgroundColor = '#fed7d7';
+                resultDiv.style.color = '#742a2a';
+                resultDiv.innerHTML = `Obtuviste ${score} de ${total} respuestas correctas (${percentage}%). Te recomendamos repasar las secciones informativas del sitio web.`;
+            }
+        }
+    </script>
+</body>
+</html>
